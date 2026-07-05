@@ -18,6 +18,28 @@ body {
   --awesome-text-color: rgb(56 189 248); /* sky-400 for dark mode */
 }
 
+/* Blue/black ambient glow blobs used behind hero + section signatures */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-orb-blue {
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.55), rgba(0, 4, 40, 0) 70%);
+}
+.glow-orb-royal {
+  background: radial-gradient(circle at center, rgba(0, 78, 146, 0.5), rgba(0, 4, 40, 0) 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-floatY,
+  .animate-pulseGlow {
+    animation: none !important;
+  }
+}
+
 /* Text color for dark background */
 .dark-text {
   color: white;

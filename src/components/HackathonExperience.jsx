@@ -1,5 +1,6 @@
 import hackathonData from "../data/hackathonData";
 import { IoBriefcaseOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 import HorizontalLine from "./HorizontalLine";
 
 const HackathonExperience = () => {
@@ -32,19 +33,23 @@ const HackathonExperience = () => {
               {/* Timeline */}
               <div className="relative">
                 {/* Vertical line */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-300 to-purple-300 dark:from-blue-700 dark:to-purple-700"></div>
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-royal to-electric dark:from-royal dark:to-glow"></div>
 
                 {/* Hackathon items */}
                 {hackathonData.map((hackathon, index) => (
-                  <div
+                  <motion.div
                     key={hackathon.id}
                     className="relative mb-16 last:mb-0 group"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <div className="flex">
                       {/* Logo circle */}
                       <div className="relative z-10">
                         <div
-                          className={`w-12 h-12 rounded-full flex items-center justify-center overflow-hidden mr-6 shadow-md border-2 border-white dark:border-gray-800 ${hackathon.color} group-hover:scale-110 transition-transform duration-300`}
+                          className={`w-12 h-12 rounded-full flex items-center justify-center overflow-hidden mr-6 shadow-md border-2 border-white dark:border-navy ring-2 ring-transparent group-hover:ring-electric ${hackathon.color} group-hover:scale-110 transition-all duration-300`}
                         >
                           <img
                             src={hackathon.logoUrl}
@@ -55,7 +60,7 @@ const HackathonExperience = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 pb-8 pt-2 px-2 md:px-6 rounded-md group-hover:bg-gray-100 dark:group-hover:bg-white/10 transition-all duration-200">
+                      <div className="flex-1 pb-8 pt-2 px-2 md:px-6 rounded-md group-hover:bg-blue-50 dark:group-hover:bg-white/10 transition-all duration-200">
                         <div className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-2">
                           {hackathon.date}
                         </div>
@@ -67,12 +72,12 @@ const HackathonExperience = () => {
                           {hackathon.projectType}
                         </div>
 
-                        <p className="text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 group-hover:shadow-md transition-shadow duration-300">
+                        <p className="text-gray-600 dark:text-gray-300 bg-white dark:bg-navy/60 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-royal/40 group-hover:shadow-md group-hover:border-electric/50 transition-all duration-300">
                           {hackathon.description}
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

@@ -28,8 +28,12 @@ const Details = ({ fontClass, bgClass }) => {
   };
 
   return (
-    <div className={`min-h-screen py-0 px-4 sm:px-6 pt-0 md:pt-12 lg:px-8`}>
-      <div className="max-w-6xl mx-auto">
+    <div className={`relative min-h-screen py-0 px-4 sm:px-6 pt-0 md:pt-12 lg:px-8 overflow-hidden`}>
+      {/* Ambient blue/black glow orbs — signature background element */}
+      <div className="glow-orb glow-orb-blue w-72 h-72 -top-10 -left-16 animate-floatY" />
+      <div className="glow-orb glow-orb-royal w-96 h-96 top-40 right-0 animate-pulseGlow" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row">
           {/* Left Container */}
           <div
@@ -80,7 +84,7 @@ const Details = ({ fontClass, bgClass }) => {
                 href="https://github.com/syedhisham"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={` hover:text-gray-300`}
+                className={` hover:text-electric hover:-translate-y-1 transition-all duration-200`}
               >
                 <FaGithub size={28} />
               </a>
@@ -88,7 +92,7 @@ const Details = ({ fontClass, bgClass }) => {
                 href="https://www.linkedin.com/in/syedhishamshah27"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={` hover:text-gray-300`}
+                className={` hover:text-electric hover:-translate-y-1 transition-all duration-200`}
               >
                 <FaLinkedin size={28} />
               </a>
@@ -96,7 +100,7 @@ const Details = ({ fontClass, bgClass }) => {
                 href="https://www.instagram.com/syedhishamshah/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={` hover:text-gray-300`}
+                className={` hover:text-electric hover:-translate-y-1 transition-all duration-200`}
               >
                 <FaInstagram size={28} />
               </a>
@@ -104,7 +108,7 @@ const Details = ({ fontClass, bgClass }) => {
                 href="https://wa.me/923038144158"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={` hover:text-gray-300`}
+                className={` hover:text-electric hover:-translate-y-1 transition-all duration-200`}
               >
                 <FaWhatsapp size={28} />
               </a>
@@ -112,7 +116,7 @@ const Details = ({ fontClass, bgClass }) => {
                 href={`https://discord.com/users/${discordId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={` hover:text-gray-300`}
+                className={` hover:text-electric hover:-translate-y-1 transition-all duration-200`}
               >
                 <FaDiscord size={28} />
               </a>

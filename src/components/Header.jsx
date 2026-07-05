@@ -4,6 +4,7 @@ import { BsMoonStars } from "react-icons/bs";
 import { FaEnvelope } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { gsap } from "gsap";
+import { motion } from "framer-motion";
 import HorizontalLine from "./HorizontalLine";
 import { useTheme } from "../context/ThemeContext";
 
@@ -61,15 +62,18 @@ const Header = ({ fontClass }) => {
   };
 
   return (
-    <header
+    <motion.header
       ref={headerRef}
-      className={`sticky top-0 z-50 transition-all duration-300 ${fontClass}  backdrop-blur-sm`}
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`sticky top-0 z-50 transition-all duration-300 ${fontClass} backdrop-blur-sm dark:bg-navy/70`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center relative">
           {/* Logo/Name Area */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight hover:text-blue-600 transition-colors duration-200">
+            <h1 className="text-xl sm:text-2xl font-bold tracking-tight hover:text-electric transition-colors duration-200">
               Syed Hisham Ali Shah
             </h1>
           </div>
@@ -78,7 +82,7 @@ const Header = ({ fontClass }) => {
           <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={handleEmailClick}
-              className="flex items-center group hover:text-blue-600 transition-colors duration-200"
+              className="flex items-center group hover:text-electric transition-colors duration-200"
               target="_blank"
             >
               <FaEnvelope className="mr-2 text-lg group-hover:scale-110 transition-transform duration-200" />
@@ -87,7 +91,7 @@ const Header = ({ fontClass }) => {
 
             <button
               onClick={handlePhoneClick}
-              className="flex items-center group hover:text-green-600 transition-colors duration-200"
+              className="flex items-center group hover:text-glow transition-colors duration-200"
               target="_blank"
             >
               <FaWhatsapp className="mr-2 text-lg group-hover:scale-110 transition-transform duration-200" />
@@ -188,7 +192,7 @@ const Header = ({ fontClass }) => {
       </div>
 
       <HorizontalLine />
-    </header>
+    </motion.header>
   );
 };
 

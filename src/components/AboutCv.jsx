@@ -85,7 +85,7 @@ const AboutCv = ({ textColorClass = "indigo-600", fontClass, bgClass }) => {
             <button
               onClick={handleCvNavigation}
               variant="outlined"
-              className={`px-5 py-3 text-sm font-medium rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-500 shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-3 group`}
+              className={`px-5 py-3 text-sm font-medium rounded-xl text-white bg-gradient-to-r from-royal to-electric border border-transparent shadow-md hover:shadow-lg hover:shadow-electric/30 transition-all duration-300 flex items-center justify-center gap-3 group`}
               title="My CV"
             >
               <span>View my CV</span>
@@ -99,7 +99,7 @@ const AboutCv = ({ textColorClass = "indigo-600", fontClass, bgClass }) => {
 
             {/* Button hover effect animation */}
             <motion.div
-              className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-indigo-400 rounded-full"
+              className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-electric rounded-full"
               initial={{ opacity: 0, width: "20%" }}
               animate={{
                 opacity: isHovering ? 1 : 0,

@@ -40,11 +40,22 @@ const SvgSpinnerAnimation = () => {
         width="100px"
         height="100px"
         viewBox="0 0 300 300"
-        style={{ transform: `rotate(${rotation}deg)`, transition: "transform 0.2s ease" }}
+        style={{
+          transform: `rotate(${rotation}deg)`,
+          transition: "transform 0.2s ease",
+          filter: "drop-shadow(0 0 12px rgba(59,130,246,0.45))",
+        }}
         xmlSpace="preserve"
       >
-        {/* Central black circle */}
-        <circle cx="150" cy="150" r="30" fill="black" />
+        <defs>
+          <radialGradient id="spinnerCore" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#38BDF8" />
+            <stop offset="100%" stopColor="#000428" />
+          </radialGradient>
+        </defs>
+
+        {/* Central glowing navy core */}
+        <circle cx="150" cy="150" r="30" fill="url(#spinnerCore)" />
 
         {/* Merged wings forming a circular shape */}
         <g>
@@ -59,7 +70,7 @@ const SvgSpinnerAnimation = () => {
               <path
                 key={index}
                 d={`M150,150 L${outerX1},${outerY1} A80,80 0 0,1 ${outerX2},${outerY2} Z`}
-                fill={index % 2 === 0 ? "#A9A9A9" : "gray"} // Alternate between gray and dark gray
+                fill={index % 2 === 0 ? "#004e92" : "#0B1220"} // Alternate royal blue and near-black
                 style={{ transition: "fill 0.3s ease" }} // Smooth fill transition
               />
             );

@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --awesome-text-color: rgb(2 132 199); /* sky-600 for light mode */
+}
+
+.dark {
+  --awesome-text-color: rgb(56 189 248); /* sky-400 for dark mode */
+}
+
+/* Text color for dark background */
+.dark-text {
+  color: white;
+}
+/* Equivalent to text-white/60 in CSS */
+.gray-text {
+  color: rgba(255, 255, 255, 0.6); /* 60% opacity */
+}
+.blue-gray {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity, 1));
+}
+.awsomeTextColor {
+  color: var(--awesome-text-color);
+}
+
+.awsomeTextColorDark {
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity, 1)); /* sky-600 */
+}
+
+.awsomeIndigoColor {
+  --tw-text-opacity: 1;
+  color: rgb(165 180 252 / var(--tw-text-opacity, 1));
+}
+.awsomeBgIndigoClor {
+  --tw-text-opacity: 1;
+  background-color: rgb(165 180 252 / var(--tw-text-opacity, 1));
+}
+
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: small;
+}
+
+.playwrite-au-sa {
+  font-family: "Playwrite AU SA", serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+}
+.mulish {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.mulish2 {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: large;
+  font-style: normal;
+}
+.montserrat {
+  font-family: "Montserrat", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: large;
+}
+
+.edu-au-vic-wa-nt-dots {
+  font-family: "Edu AU VIC WA NT Dots", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.scrollbar {
+  /* Hide the scrollbar */
+  overflow: auto; /* Allows scrolling */
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in WebKit browsers (Chrome, Safari) */
+}
+
+.scrollbar {
+  -ms-overflow-style: none; /* Hides the scrollbar in Internet Explorer and Edge */
+  scrollbar-width: none; /* Hides the scrollbar in Firefox */
+}
+
+/* Texture container holding multiple glowing layers */
+.texture-container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: lighten; /* For visual blending of glowing textures */
+}
+
+/* Base styles for texture layers */
+.texture-layer {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  filter: blur(50px);
+}
+
+.layer-1 {
+  width: 300px;
+  height: 300px;
+  background-image: radial-gradient(
+    circle at center,
+    #ece6e6,
+    #f3e9e9,
+    #ebd7d7
+  );
+  box-shadow: 0 0 40px 10px rgba(46, 46, 46, 0.5);
+}
+
+.layer-2 {
+  width: 350px;
+  height: 350px;
+  background-image: radial-gradient(
+    circle at center,
+    #4a4a4a,
+    #3b3b3b,
+    #2e2e2e
+  );
+  box-shadow: 0 0 50px 15px rgba(46, 46, 46, 0.4);
+}
+
+/* Glowing texture - Layer 3 */
+.layer-3 {
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(
+    circle at center,
+    #5a5a5a,
+    #4b4b4b,
+    #3a3a3a
+  );
+  box-shadow: 0 0 60px 20px rgba(46, 46, 46, 0.3);
+}
+
+.animate-letterFill {
+  animation: letterFill 0.5s forwards;
+  display: inline-block;
+}
+
+@keyframes letterFill {
+  0% {
+    color: transparent;
+    -webkit-text-stroke: 1px #0f172a;
+  }
+  100% {
+    color: white;
+    -webkit-text-stroke: 0;
+  }
+}
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+/* App.css */
+/* body {
+  background-color: black;
+  text-align: center;
+  color: #777;
+} */
+
+.svg-container {
+  margin: 30px auto;
+}
+svg {
+  display: block;
+  margin: 0 auto;
+}
+/* Ensure the body or root container takes up the full height of the viewport */
+
+.customBackgrounColor {
+  background: hsla(213, 49%, 47%, 1);
+
+  background: linear-gradient(
+    180deg,
+    hsla(213, 49%, 47%, 1) 0%,
+    hsla(203, 89%, 71%, 1) 50%,
+    hsla(0, 0%, 96%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    180deg,
+    hsla(213, 49%, 47%, 1) 0%,
+    hsla(203, 89%, 71%, 1) 50%,
+    hsla(0, 0%, 96%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    180deg,
+    hsla(213, 49%, 47%, 1) 0%,
+    hsla(203, 89%, 71%, 1) 50%,
+    hsla(0, 0%, 96%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3D72B4", endColorstr="#71c3f7", GradientType=1 );
+}
+.customBackgroundNewColor {
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #004e92,
+    #000428
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #004e92,
+    #000428
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.light-text {
+  color: black;
+}
+
+
+.texture-layer {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  filter: blur(100px);
+}
+
+.layer-1 {
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(
+    circle at center,
+    hsla(213, 49%, 40%, 1),
+    /* Darker blue */ hsla(203, 89%, 60%, 1),
+    /* Darker light blue */ hsla(0, 0%, 85%, 1) /* Lighter gray */
+  );
+  box-shadow: 0 0 40px 10px rgba(20, 19, 19, 0.5);
+}
+
+.layer-2 {
+  width: 350px;
+  height: 350px;
+  background-image: radial-gradient(
+    circle at center,
+    rgb(11, 39, 76),
+    /* Darker blue */ rgb(29, 88, 125),
+    /* Darker light blue */ rgb(46, 51, 142) /* Lighter gray */
+  );
+  box-shadow: 0 0 50px 15px rgba(46, 46, 46, 0.4);
+}
+
+/* Glowing texture - Layer 3 */
+.layer-3 {
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(
+    circle at center,
+    rgb(8, 30, 58),
+    /* Darker blue */ rgb(20, 64, 91),
+    /* Darker light blue */ rgb(12, 17, 105) /* Lighter gray */
+      /* Lighter gray */
+  );
+  box-shadow: 0 0 60px 20px rgba(46, 46, 46, 0.3);
+}
